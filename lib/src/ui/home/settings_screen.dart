@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_switch/flutter_switch.dart';
-import 'package:in_game/src/ui/auth/login/login_screen.dart';
 import 'package:in_game/src/utils/app_theme.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

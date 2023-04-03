@@ -14,8 +14,12 @@ class PitchesBlock {
   getPitchesInfo() async {
     var response = await InGameRepository.getPitchesApi();
     if (response.success) {
-      result = await PitchesModel.fromJson(response.result);
+      result = PitchesModel.fromJson(response.result);
       _fetchPitches.sink.add(result!);
     }
+  }
+
+  dispose() {
+    _fetchPitches.close();
   }
 }

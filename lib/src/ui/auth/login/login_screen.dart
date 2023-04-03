@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:in_game/src/ui/main_screen.dart';
 import 'package:in_game/src/utils/app_theme.dart';
-import 'package:http/http.dart' as http;
 import 'package:in_game/src/inGameRepository/in_game_repository.dart';
 import 'package:in_game/src/models/http_result.dart';
 import 'package:in_game/src/models/login_model.dart';
 import 'package:in_game/src/ui/auth/registration/registration_screen.dart';
-import 'package:in_game/src/ui/home/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -277,6 +275,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                 ),
+                Spacer(),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   margin: EdgeInsets.only(top: 90),
@@ -394,7 +393,7 @@ class EnterSelect extends StatelessWidget {
         child: Row(
           children: [
             Image.asset(
-              "${image}",
+              "$image",
               width: 32,
               height: 32,
             ),

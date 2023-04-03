@@ -8,7 +8,6 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:in_game/src/block/players_block.dart';
 import 'package:in_game/src/models/api/profile_model.dart';
 import 'package:in_game/src/utils/app_theme.dart';
-import 'package:shimmer/shimmer.dart';
 
 class PlayersScreen extends StatefulWidget {
   const PlayersScreen({Key? key}) : super(key: key);
@@ -25,12 +24,12 @@ class _PlayersScreenState extends State<PlayersScreen> {
     zoom: 14,
   );
 
-  static final CameraPosition _lLake = CameraPosition(
-    bearing: 192.8334901395799,
-    target: LatLng(37.43296265331129, -122.08832357078792),
-    tilt: 59.440717697143555,
-    zoom: 19,
-  );
+  // static final CameraPosition _lLake = CameraPosition(
+  //   bearing: 192.8334901395799,
+  //   target: LatLng(37.43296265331129, -122.08832357078792),
+  //   tilt: 59.440717697143555,
+  //   zoom: 19,
+  // );
 
   @override
   void initState() {
@@ -132,22 +131,23 @@ class _PlayersScreenState extends State<PlayersScreen> {
     );
   }
 
-  Future<void> _goToTheLake() async {
-    final GoogleMapController controller = await _controller.future;
-    controller.animateCamera(
-      CameraUpdate.newCameraPosition(_lLake),
-    );
-  }
+  // Future<void> _goToTheLake() async {
+  //   final GoogleMapController controller = await _controller.future;
+  //   controller.animateCamera(
+  //     CameraUpdate.newCameraPosition(_lLake),
+  //   );
+  // }
+
 }
 
 class ItemUser extends StatefulWidget {
-  String image;
-  String name;
-  int age;
-  int winPercent;
-  int point;
-  String imgText;
-  String city;
+  final String image;
+  final String name;
+  final int age;
+  final int winPercent;
+  final int point;
+  final String imgText;
+  final String city;
 
   ItemUser({
     required this.image,

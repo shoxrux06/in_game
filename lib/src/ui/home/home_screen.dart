@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +10,6 @@ import 'package:in_game/src/ui/home/last_games.dart';
 import 'package:in_game/src/ui/home/settings_screen.dart';
 import 'package:in_game/src/utils/app_theme.dart';
 import 'package:intl/intl.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:shimmer/shimmer.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -350,7 +347,7 @@ class HomeScreenState extends State<HomeScreen> {
                                                   ),
                                                 ),
                                                 _textTitle2(
-                                                    "${(snapshot.data!.data.gameTime / 60).toInt()}ч.${snapshot.data!.data.gameTime % 60}м."),
+                                                    "${snapshot.data!.data.gameTime ~/ 60}ч.${snapshot.data!.data.gameTime % 60}м."),
                                                 _textDesc("время в игре"),
                                               ],
                                             ),
@@ -932,20 +929,6 @@ class HomeScreenState extends State<HomeScreen> {
   }
 }
 
-Widget _textSchyot(String title) {
-  return Text(
-    title,
-    style: TextStyle(
-      fontFamily: AppTheme.fontFamilyManrope,
-      fontWeight: FontWeight.w600,
-      fontStyle: FontStyle.normal,
-      fontSize: 32,
-      height: 44 / 32,
-      color: AppTheme.WHITE,
-    ),
-  );
-}
-
 Widget _textTypes(String title) {
   return Text(
     title,
@@ -1143,11 +1126,11 @@ class CustomSliverDelegate extends SliverPersistentHeaderDelegate {
     );
   }
 
-  Future<File> _getLocalFile(String fileName) async {
-    String dir = (await getApplicationDocumentsDirectory()).path;
-    File f = new File("$dir$fileName");
-    return f;
-  }
+  // Future<File> _getLocalFile(String fileName) async {
+  //   String dir = (await getApplicationDocumentsDirectory()).path;
+  //   File f = new File("$dir$fileName");
+  //   return f;
+  // }
 
   @override
   double get maxExtent => expandedHeight + expandedHeight / 2;

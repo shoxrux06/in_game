@@ -15,7 +15,6 @@ class ListOfClubs extends StatefulWidget {
 
 class _ListOfClubsState extends State<ListOfClubs> {
   bool isChecked = false;
-  int _index = -1;
   String valueGroup = "";
 
   @override
@@ -110,7 +109,6 @@ class _ListOfClubsState extends State<ListOfClubs> {
                             GestureDetector(
                               onTap: () {
                                 valueGroup = snapshot.data!.results[index].name;
-                                _index = index;
                                 setState(() {
                                   isChecked = !isChecked;
                                 });

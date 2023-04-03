@@ -2,7 +2,6 @@ import 'package:in_game/src/inGameRepository/in_game_repository.dart';
 import 'package:in_game/src/models/api/club_model.dart';
 import 'package:in_game/src/models/api/game_end_model.dart';
 import 'package:in_game/src/models/api/profile_model.dart';
-import 'package:in_game/src/utils/cache.dart';
 import 'package:rxdart/rxdart.dart';
 
 final homeBlock = HomeBlock();

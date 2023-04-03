@@ -1,12 +1,10 @@
 import 'dart:io';
 
-import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:in_game/src/ui/home/list_of_clubs.dart';
-import 'package:in_game/src/ui/home/take_picture_sreen.dart';
 import 'package:in_game/src/utils/app_theme.dart';
 import 'package:intl/intl.dart';
 
@@ -21,7 +19,7 @@ class _EditDataState extends State<EditData> {
   @override
   void initState() {
     // Cache.getData();
-    print("*********${imageFile}**************");
+    print("*********$imageFile**************");
     super.initState();
   }
 
@@ -38,8 +36,7 @@ class _EditDataState extends State<EditData> {
             title: Text(
               "Make your choice!",
               style: TextStyle(
-                fontFamily:
-                AppTheme.fontFamilyManrope,
+                fontFamily: AppTheme.fontFamilyManrope,
                 fontStyle: FontStyle.normal,
                 fontWeight: FontWeight.w600,
                 fontSize: 24,
@@ -49,14 +46,11 @@ class _EditDataState extends State<EditData> {
             ),
             content: Container(
               child: Column(
-                crossAxisAlignment:
-                CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   GestureDetector(
                     onTap: () async {
-                      PickedFile pickedFile =
-                      (await ImagePicker()
-                          .getImage(
+                      PickedFile pickedFile = (await ImagePicker().getImage(
                         source: ImageSource.camera,
                         maxWidth: 1800,
                         maxHeight: 1800,
@@ -69,8 +63,7 @@ class _EditDataState extends State<EditData> {
                     child: Text(
                       "From camera",
                       style: TextStyle(
-                        fontFamily: AppTheme
-                            .fontFamilyManrope,
+                        fontFamily: AppTheme.fontFamilyManrope,
                         fontStyle: FontStyle.normal,
                         fontWeight: FontWeight.w600,
                         fontSize: 24,
@@ -85,9 +78,7 @@ class _EditDataState extends State<EditData> {
                   ),
                   GestureDetector(
                     onTap: () async {
-                      PickedFile pickedFile =
-                      (await ImagePicker()
-                          .getImage(
+                      PickedFile pickedFile = (await ImagePicker().getImage(
                         source: ImageSource.gallery,
                         maxWidth: 1800,
                         maxHeight: 1800,
@@ -100,8 +91,7 @@ class _EditDataState extends State<EditData> {
                     child: Text(
                       "From Gallery",
                       style: TextStyle(
-                        fontFamily: AppTheme
-                            .fontFamilyManrope,
+                        fontFamily: AppTheme.fontFamilyManrope,
                         fontStyle: FontStyle.normal,
                         fontWeight: FontWeight.w600,
                         fontSize: 24,
@@ -444,11 +434,10 @@ class _EditDataState extends State<EditData> {
               color: AppTheme.DARK,
             ),
             GestureDetector(
-              onTap: (){
-
-              },
+              onTap: () {},
               child: Container(
-                margin: EdgeInsets.only(top: 12, left: 24, right: 24, bottom: 8),
+                margin:
+                    EdgeInsets.only(top: 12, left: 24, right: 24, bottom: 8),
                 width: MediaQuery.of(context).size.width,
                 height: 48,
                 decoration: BoxDecoration(
@@ -469,7 +458,7 @@ class _EditDataState extends State<EditData> {
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

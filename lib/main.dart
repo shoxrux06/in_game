@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:in_game/src/ui/auth/login/login_screen.dart';
-import 'package:in_game/src/ui/home/home_screen.dart';
 import 'package:in_game/src/ui/main_screen.dart';
-import 'package:in_game/src/ui/testfile.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 String token = "";
